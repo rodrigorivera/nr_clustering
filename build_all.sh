@@ -1,8 +1,21 @@
 #! /bin/bash
 docker-compose up -d
 printf "export LC_ALL=en_US.UTF-8\nexport LANG=en_US.UTF-8" >> .env
-mkdir data
-mkdir output
+# create the notebook directory
+NBDIR=data
+NBDIR2=output
+mkdir "$NBDIR"
+mkdir "$NBDIR2"
+# make it owned by the GID, in osx it is staff.
+#chown :100 "$NBDIR"
+chown :staff "$NBDIR"
+chown :staff "$NBDIR2"
+# make it group-setgid-writable
+chmod g+rws "$NBDIR"
+chmod g+rws "$NBDIR2"
+# set the default permissions for new files to group-writable
+#setfacl -d -m g::rwx "$NBDIR"
+#setfacl -d -m g::rwx "$NBDIR2"
 docker container exec nr_clustering_notebook-server_1 sh -c 'apt-get update -qq && \
 apt-get install -qqy --no-install-recommends git wget && \
 pip --no-cache-dir install -U pip && \
@@ -33,4 +46,6 @@ pip --no-cache-dir install git+https://github.com/tgsmith61591/pyramid.git && \
 pip --no-cache-dir install git+https://github.com/networkx/networkx.git && \
 pip --no-cache-dir install numba && \
 pip --no-cache-dir install joblib'
+
+
 
