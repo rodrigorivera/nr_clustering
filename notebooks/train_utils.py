@@ -209,8 +209,8 @@ def plot_comparison_batch(X, X_recon, y_true, y_pred, file_path, target_features
     plt.savefig(file_path, bbox_inches='tight', dpi=100)
     plt.close()
 
-def fit_model_report(SS_MOD, VERBOSE, target_features, num_labels, latent_dim, L, device, epochs, train_loader, test_loader, prefix, test_rate=100):
-    model = SSVAE(in_channels=len(target_features), M=num_labels, L=L, device=device, K=20, P=10, hidden_lsz=latent_dim, channels=5, 
+def fit_model_report(SS_MOD, VERBOSE, target_features, num_labels, latent_dim, L, device, epochs, train_loader, test_loader, prefix, test_rate=100, channels=5):
+    model = SSVAE(in_channels=len(target_features), M=num_labels, L=L, device=device, K=20, P=10, hidden_lsz=latent_dim, channels=channels, 
               mp=3, lstm_sz=10, clf_sz=10, is_semi_supervised=(SS_MOD is not None)).to(device)
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
     if VERBOSE:
