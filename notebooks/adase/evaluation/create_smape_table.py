@@ -2,7 +2,7 @@ import pandas as pd
 import logging
 from typing import Dict
 
-from src.adase.utils.pandas import write_df
+from ..utils.pandas import write_df
 
 
 def create_smape_table(

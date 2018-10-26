@@ -1,0 +1,52 @@
+##
+## To obtain the path, do not forget to use command 'pwd' in the main folder
+##
+global:
+    path_full:
+    name:
+      main:
+        - item_code
+        - future_flag
+      siblings:
+        - item_code_parent
+        - future_flag
+      parents:
+        - item_code_child
+        - future_flag
+      children:
+        - item_code
+        - future_flag
+      encode:
+        - category_code
+        - future_flag
+      type:
+        - type
+        - future_flag
+      cluster:
+        - cluster_code
+        - future_flag
+
+makedataset:
+    files:
+      - https://www.dropbox.com/s/tndo2zb6gxwdns7/demand_out_encoded_stage_3.csv?dl=1
+      - https://www.dropbox.com/s/x5ucq03l0zyaoqu/item_encode_external_v2.csv?dl=1
+      - https://www.dropbox.com/s/d1nl4job4vzveho/item.csv?dl=1
+      - https://www.dropbox.com/s/ciwwce8qb8ivqrd/topo_out_encoded_stage_3.csv?dl=1
+      - https://www.dropbox.com/s/ba6tyv6vrlwmh2w/item_type.csv?dl=1
+    path_log: output/logs/make_dataset/
+    log_file: log_makedataset_huawei.log
+    path_read_input: --
+    path_write_output: --
+    path_read_output: --
+
+dataset:
+    path_log: output/logs/dataset/
+    log_file: log_dataset_huawei.log
+    path_original_file: data/raw/demand_encode_out.csv
+    path_read_input: ../data/
+    path_write_output: data/interim/1dataset/
+    path_read_output: data/interim/1dataset/
+
+
+
+

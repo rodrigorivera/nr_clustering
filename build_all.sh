@@ -45,7 +45,10 @@ pip --no-cache-dir install git+https://github.com/scikit-learn/scikit-learn.git 
 pip --no-cache-dir install git+https://github.com/tgsmith61591/pyramid.git && \
 pip --no-cache-dir install git+https://github.com/networkx/networkx.git && \
 pip --no-cache-dir install numba && \
-pip --no-cache-dir install joblib'
+pip --no-cache-dir install joblib && \
+pip --no-cache-dir install git+https://github.com/rtavenar/tslearn.git
+'
+
 
 
 
