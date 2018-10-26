@@ -4,6 +4,9 @@
 
 Project for the Bayesian Machine Learning class at Skoltech, 2018
 
+Source code of the project under the 'notebooks' directory.
+PDF file and TEX sources under 'project_report'
+
 ## Topic
 Semi-supervised Time-Series Learning with Deep Generative Models
 
@@ -24,6 +27,11 @@ Nikita Klyuchnikov
 
 Rodrigo Rivera
 
+## How to run
+1) Execute ./build_all.sh to build the docker container
+2) After it has finished installing, run docker ps to see under which port the notebook server is running
+3) If the docker container is built but not running, it can be started with ./start.sh
+
 
 ## Project Organization
 ------------
@@ -37,15 +45,18 @@ Rodrigo Rivera
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
     │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details (Not in use at the moment)
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    ├── models             <- Trained and serialized models, model predictions, or model summaries (Not in use at the moment)
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
+    ├── notebooks          <- Source code is here. Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
     │                         `1.0-jqp-initial-data-exploration`.
     │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+    ├── project_report     <- PDF file and TEX files of the report of this project
+    │
+    │
+    ├── references         <- Data dictionaries, manuals, and all other explanatory materials (Not in use at the moment).
     │
     ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
     │   └── figures        <- Generated graphics and figures to be used in reporting
@@ -53,7 +64,7 @@ Rodrigo Rivera
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
     │
-    ├── src                <- Source code for use in this project.
+    ├── src                <- Source code for use in this project (Not in use at the moment).
     │   ├── __init__.py    <- Makes src a Python module
     │   │
     │   ├── data           <- Scripts to download or generate data
